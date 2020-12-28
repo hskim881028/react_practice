@@ -3,6 +3,10 @@ import React from "react"
 // import PropTypes from "prop-types";
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log("hello");
+    }
     state = {
         count: 0
     };
@@ -16,7 +20,20 @@ class App extends React.Component {
         console.log("minus");
     };
 
+    componentDidMount() {
+        console.log("componentDidMount");
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("componentDidUpdate");
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount");
+    }
+
     render() {
+        console.log("render");
         return <div>
             <h1>The number is {this.state.count}</h1>
             <button onClick={this.add}>Add</button>
