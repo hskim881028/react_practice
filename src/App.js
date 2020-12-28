@@ -1,7 +1,10 @@
+import Patato from "./Potato"
+
 function App() {
   return (
     <div className="App">
-      Hello
+      <h1>Hello</h1>
+        <Patato />
     </div>
   );
 }
