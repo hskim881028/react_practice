@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 
-// import PropTypes from "prop-types";
-
 class App extends React.Component {
   state = {
     isLoading: true,
@@ -38,16 +36,12 @@ class App extends React.Component {
               <span className="loader_text">Loading...</span>
             </div>
           ) : (
-            movies.map((movie) => {
+            movies.map(({ id, title, medium_cover_image, genres }) => {
               return (
                 <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  year={movie.year}
-                  title={movie.title}
-                  summary={movie.summary}
-                  poster={movie.medium_cover_image}
-                  genres={movie.genres}
+                  title={title}
+                  poster={medium_cover_image}
+                  genres={genres}
                 />
               );
             })
